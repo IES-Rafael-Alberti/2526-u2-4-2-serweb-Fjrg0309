@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx:latest
+    container_name: practica_nginx
+    ports:
+      - "8080:80"
+      - "8443:443"
+    volumes:
+      - ./webdata/web-principal:/usr/share/nginx/html
+      - ./webdata/web-reloj:/usr/share/nginx/html/reloj
+      - ./webdata/admin:/usr/share/nginx/html/admin
+      - ./default.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx-selfsigned.crt:/etc/nginx/ssl/nginx-selfsigned.crt
+      - ./nginx-selfsigned.key:/etc/nginx/ssl/nginx-selfsigned.key
+      - ./.htpasswd:/etc/nginx/.htpasswd
+    restart: unless-stopped
+    networks:
+      - practica_network
+
+  sftp:
+    image: atmoz/sftp:latest
+    container_name: practica_sftp
+    ports:
+      - "2222:22"
+    volumes:
+      - ./webdata/web-principal:/home/usuario/upload
+    command: usuario:password:1001::upload
+    restart: unless-stopped
+    networks:
+      - practica_network
+
+networks:
+  practica_network:
+    driver: bridge

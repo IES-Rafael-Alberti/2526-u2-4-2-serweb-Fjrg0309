@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 2em;
+            text-align: center;
+        }
+        .subtitle {
+            color: #666;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        .success-badge {
+            background: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            display: inline-block;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        .info-section {
+            background: #f5f5f5;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .info-section h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        .info-section p {
+            color: #555;
+            line-height: 1.6;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #999;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔐 Panel de Administración</h1>
+        <p class="subtitle">Área Restringida - Acceso Autorizado</p>
+        
+        <center>
+            <span class="success-badge">✓ Autenticación Exitosa</span>
+        </center>
+        
+        <div class="info-section">
+            <h3>Información del Sistema</h3>
+            <p>Has accedido exitosamente al área de administración protegida mediante HTTP Basic Authentication.</p>
+        </div>
+        
+        <div class="info-section">
+            <h3>Seguridad Implementada</h3>
+            <p>
+                • Autenticación HTTP Basic Auth<br>
+                • Archivo .htpasswd con bcrypt<br>
+                • Conexión HTTPS cifrada<br>
+                • Cabeceras de seguridad activas
+            </p>
+        </div>
+        
+        <div class="info-section">
+            <h3>Configuración Nginx</h3>
+            <p>
+                Este directorio está protegido mediante la directiva <code>auth_basic</code> 
+                en la configuración de Nginx, requiriendo credenciales válidas para el acceso.
+            </p>
+        </div>
+        
+        <div class="footer">
+            <p>Práctica Despliegue Web - Nginx + SFTP + Docker</p>
+        </div>
+    </div>
+</body>
+</html>
