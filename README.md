@@ -1,7 +1,8 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/V0UhzOJZ)
 # P4.1 — Segunda Parte (Evaluacion RA2) — Nginx en Docker
 
 Documento de entrega unico (obligatorio):
-[DESPLIEGUE.md](./DESPLIEGUE.md)
+![DESPLIEGUE.md](./DESPLIEGUE.md)
 
 En DESPLIEGUE.md debes incluir:
 - Parte 1: evidencias de que tu infraestructura inicial funciona (Nginx + SFTP + volumen + webs + HTTPS).
